@@ -1256,7 +1256,7 @@ section {
 .footer {
     background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
     color: var(--white);
-    padding: 3rem 0 1rem;
+    padding: 0 1rem;
     position: relative;
     overflow: hidden;
 }
