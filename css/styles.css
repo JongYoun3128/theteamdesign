@@ -147,10 +147,6 @@ body::before {
     transition: var(--transition);
 }
 
-.logo-image:hover {
-    transform: scale(1.05);
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
@@ -655,7 +651,6 @@ section {
 
 .about-image {
     box-sizing: border-box;
-    padding-top: 80px;
     height: 100%;
 }
 
@@ -1303,10 +1298,6 @@ section {
     object-fit: contain;
     margin-bottom: 1rem;
     transition: var(--transition);
-}
-
-.footer-logo-image:hover {
-    transform: scale(1.05);
 }
 
 .footer-brand p {
