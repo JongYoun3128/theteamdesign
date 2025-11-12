@@ -84,12 +84,57 @@ document
 //     contactForm.reset();
 // });
 
-// 포트폴리오 아이템 클릭 효과
+// 포트폴리오 아이템 클릭 효과 - 이미지 모달
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.getElementById("closeModal");
+
+// 포트폴리오 아이템 클릭 시 모달 열기
 document.querySelectorAll(".portfolio-item").forEach((item) => {
-    item.addEventListener("click", () => {
-        // 실제로는 모달이나 상세 페이지를 보여줄 수 있습니다
-        console.log("Portfolio item clicked");
+    item.addEventListener("click", (e) => {
+        // 이미지 요소 찾기
+        const img = item.querySelector(".portfolio-image img");
+        if (img && imageModal && modalImage) {
+            // 모달 이미지 소스 설정
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            
+            // 모달 표시
+            imageModal.classList.add("active");
+            
+            // body 스크롤 방지
+            document.body.style.overflow = "hidden";
+        }
     });
+});
+
+// X 버튼 클릭 시 모달 닫기
+if (closeModal) {
+    closeModal.addEventListener("click", () => {
+        if (imageModal) {
+            imageModal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+}
+
+// 오버레이 클릭 시 모달 닫기
+if (imageModal) {
+    imageModal.addEventListener("click", (e) => {
+        // modal-overlay나 image-modal 자체를 클릭했을 때만 닫기
+        if (e.target === imageModal || e.target.classList.contains("modal-overlay")) {
+            imageModal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+}
+
+// ESC 키로 모달 닫기
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && imageModal && imageModal.classList.contains("active")) {
+        imageModal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
 });
 
 // 페이지 로드 시 히어로 애니메이션
