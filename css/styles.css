@@ -657,7 +657,7 @@ section {
 
 .modal-content {
     position: relative;
-    max-width: 90vw;
+    max-width: 190vw;
     max-height: 90vh;
     z-index: 10000;
     animation: zoomIn 0.3s ease;
@@ -722,7 +722,7 @@ section {
         max-width: 95vw;
         max-height: 80vh;
     }
-    
+
     .close-btn {
         top: -45px;
         width: 35px;
@@ -1357,31 +1357,11 @@ section {
     overflow: hidden;
 }
 
-.footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(
-            circle at 20% 50%,
-            rgba(201, 169, 97, 0.08) 0%,
-            transparent 50%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(156, 175, 136, 0.08) 0%,
-            transparent 50%
-        );
-    pointer-events: none;
-}
-
 .footer-content {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .footer-brand h3 {
@@ -1389,6 +1369,10 @@ section {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     letter-spacing: 2px;
+}
+.footer-brand {
+    width: fit-content;
+    margin: 0 auto;
 }
 .footer-brand img {
     filter: opacity(50%);
@@ -1446,8 +1430,6 @@ section {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
 }
 
