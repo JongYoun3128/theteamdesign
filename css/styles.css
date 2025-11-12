@@ -109,8 +109,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: var(--transition);
@@ -766,6 +765,7 @@ section {
 /* 진행 프로세스 섹션 */
 .process {
     background: var(--bg-light);
+    padding-bottom: 200px;
 }
 
 .process-timeline {
@@ -860,7 +860,7 @@ section {
 /* 서비스 섹션 */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2rem;
 }
 
@@ -1355,6 +1355,7 @@ section {
     padding: 0 1rem;
     position: relative;
     overflow: hidden;
+    padding-bottom: 20px;
 }
 
 .footer-content {
