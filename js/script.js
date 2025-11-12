@@ -28,21 +28,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// 부드러운 스크롤
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            const offsetTop = target.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-            });
-        }
-    });
-});
-
 // 스크롤 애니메이션
 const observerOptions = {
     threshold: 0.1,
@@ -64,25 +49,6 @@ document
         el.classList.add("scroll-reveal");
         observer.observe(el);
     });
-
-// // 폼 제출 처리
-// const contactForm = document.getElementById('contactForm');
-
-// contactForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     const name = document.getElementById('name').value;
-//     const phone = document.getElementById('phone').value;
-//     const email = document.getElementById('email').value;
-//     const service = document.getElementById('service').value;
-//     const message = document.getElementById('message').value;
-
-//     // 실제로는 서버로 데이터를 전송해야 합니다
-//     alert(`문의해 주셔서 감사합니다, ${name}님!\n빠른 시일 내에 연락드리겠습니다.`);
-
-//     // 폼 초기화
-//     contactForm.reset();
-// });
 
 // 포트폴리오 아이템 클릭 효과 - 이미지 모달
 const imageModal = document.getElementById("imageModal");
@@ -190,33 +156,6 @@ const animateCounter = (element, target, duration = 2000) => {
 
     updateCounter();
 };
-
-// 통계 섹션이 보일 때 카운터 애니메이션 시작
-const statsObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (
-                entry.isIntersecting &&
-                !entry.target.classList.contains("animated")
-            ) {
-                entry.target.classList.add("animated");
-                const h4 = entry.target.querySelector("h4");
-                const text = h4.textContent;
-                const num = parseInt(text);
-
-                if (!isNaN(num)) {
-                    h4.textContent = "0";
-                    animateCounter(h4, num);
-                }
-            }
-        });
-    },
-    { threshold: 0.5 }
-);
-
-document.querySelectorAll(".stat-item").forEach((stat) => {
-    statsObserver.observe(stat);
-});
 
 // 파티클 효과 생성
 function createParticles() {
@@ -370,50 +309,6 @@ sparkleStyle.textContent = `
     }
 `;
 document.head.appendChild(sparkleStyle);
-
-// 버튼 클릭 시 파동 효과
-document.querySelectorAll(".btn").forEach((button) => {
-    button.addEventListener("click", function (e) {
-        const ripple = document.createElement("span");
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-
-        ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            left: ${x}px;
-            top: ${y}px;
-            animation: ripple-effect 0.6s ease-out;
-            pointer-events: none;
-        `;
-
-        this.style.position = "relative";
-        this.style.overflow = "hidden";
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-    });
-});
-
-const rippleStyle = document.createElement("style");
-rippleStyle.textContent = `
-    @keyframes ripple-effect {
-        from {
-            transform: scale(0);
-            opacity: 1;
-        }
-        to {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(rippleStyle);
 
 // FAQ 아코디언 기능
 document.querySelectorAll(".faq-item").forEach((item) => {
