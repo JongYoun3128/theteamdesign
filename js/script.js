@@ -98,10 +98,10 @@ document.querySelectorAll(".portfolio-item").forEach((item) => {
             // 모달 이미지 소스 설정
             modalImage.src = img.src;
             modalImage.alt = img.alt;
-            
+
             // 모달 표시
             imageModal.classList.add("active");
-            
+
             // body 스크롤 방지
             document.body.style.overflow = "hidden";
         }
@@ -122,7 +122,10 @@ if (closeModal) {
 if (imageModal) {
     imageModal.addEventListener("click", (e) => {
         // modal-overlay나 image-modal 자체를 클릭했을 때만 닫기
-        if (e.target === imageModal || e.target.classList.contains("modal-overlay")) {
+        if (
+            e.target === imageModal ||
+            e.target.classList.contains("modal-overlay")
+        ) {
             imageModal.classList.remove("active");
             document.body.style.overflow = "";
         }
@@ -131,7 +134,11 @@ if (imageModal) {
 
 // ESC 키로 모달 닫기
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && imageModal && imageModal.classList.contains("active")) {
+    if (
+        e.key === "Escape" &&
+        imageModal &&
+        imageModal.classList.contains("active")
+    ) {
         imageModal.classList.remove("active");
         document.body.style.overflow = "";
     }
@@ -316,7 +323,7 @@ progressBar.style.cssText = `
     position: fixed;
     top: 0;
     left: 0;
-    height: 3px;
+    height: 1px;
     background: linear-gradient(90deg, #8b7355, #c9a961, #9caf88);
     z-index: 9999;
     transition: width 0.1s ease;
