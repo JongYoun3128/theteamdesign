@@ -66,7 +66,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
-    background: linear-gradient(135deg, #fafaf8 0%, #f5f1e8 100%);
+    background-color: white;
 }
 
 body::before {
@@ -1485,18 +1485,20 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        height: 840px;
+        height: 730px;
     }
     .hero-title {
         font-size: 2rem;
     }
     .hero-text {
         display: block;
-        line-height: 3;
+        line-height: 2;
+        margin-top: 30px;
     }
     .hero-text h1 {
         font-weight: bold;
         font-size: 30px;
+        margin-bottom: 20px;
     }
     .page-title {
         font-size: 2rem;
