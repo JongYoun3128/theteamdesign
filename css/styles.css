@@ -765,7 +765,7 @@ section {
 /* 진행 프로세스 섹션 */
 .process {
     background: var(--bg-light);
-    padding-bottom: 200px;
+    padding-bottom: 225px;
 }
 
 .process-timeline {
