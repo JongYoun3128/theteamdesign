@@ -262,9 +262,6 @@ body::before {
 .hero {
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
     position: relative;
     display: flex;
     align-items: center;
@@ -272,18 +269,27 @@ body::before {
     text-align: center;
     color: var(--white);
     overflow: hidden;
+    background-color: white;
+    color: black;
 }
 .hero img {
     width: 100%;
 }
-
+.small-size {
+    display: none;
+}
+.big-size {
+    display: block;
+}
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
     padding: 0 20px;
 }
-
+.hero-text {
+    display: none;
+}
 .hero-badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
@@ -1478,14 +1484,29 @@ section {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 840px;
+    }
     .hero-title {
         font-size: 2rem;
     }
-
+    .hero-text {
+        display: block;
+        line-height: 3;
+    }
+    .hero-text h1 {
+        font-weight: bold;
+        font-size: 30px;
+    }
     .page-title {
         font-size: 2rem;
     }
-
+    .small-size {
+        display: block;
+    }
+    .big-size {
+        display: none;
+    }
     .page-subtitle {
         font-size: 0.9rem;
         letter-spacing: 3px;
