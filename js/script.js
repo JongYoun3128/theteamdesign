@@ -1,3 +1,18 @@
+// 로딩 화면 제거
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    // 최소 2초 동안 로딩 화면 표시
+    setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+        
+        // 페이드아웃 완료 후 요소 제거
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 800);
+    }, 2000);
+});
+
 // 네비게이션 토글
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
