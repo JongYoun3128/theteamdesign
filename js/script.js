@@ -1,18 +1,3 @@
-// 로딩 화면 제거
-window.addEventListener('load', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    
-    // 최소 2초 동안 로딩 화면 표시
-    setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        
-        // 페이드아웃 완료 후 요소 제거
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 800);
-    }, 2000);
-});
-
 // 네비게이션 토글
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
@@ -125,19 +110,19 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// 페이지 로드 시 히어로 애니메이션
-window.addEventListener("load", () => {
-    const heroElements = document.querySelectorAll(".hero-content > *");
-    heroElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }, index * 200);
-    });
+// // 페이지 로드 시 히어로 애니메이션
+// window.addEventListener("load", () => {
+//     const heroElements = document.querySelectorAll(".hero-content > *");
+//     heroElements.forEach((el, index) => {
+//         setTimeout(() => {
+//             el.style.opacity = "1";
+//             el.style.transform = "translateY(0)";
+//         }, index * 200);
+//     });
 
-    // 파티클 효과 시작
-    createParticles();
-});
+//     // 파티클 효과 시작
+//     createParticles();
+// });
 
 // 스크롤 진행률 표시 (선택사항)
 window.addEventListener("scroll", () => {
@@ -172,28 +157,28 @@ const animateCounter = (element, target, duration = 2000) => {
     updateCounter();
 };
 
-// 파티클 효과 생성
-function createParticles() {
-    const hero = document.querySelector(".hero");
-    const particlesContainer = document.createElement("div");
-    particlesContainer.className = "particles";
-    particlesContainer.style.cssText = `
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-    `;
+// // 파티클 효과 생성
+// function createParticles() {
+//     const hero = document.querySelector(".hero");
+//     const particlesContainer = document.createElement("div");
+//     particlesContainer.className = "particles";
+//     particlesContainer.style.cssText = `
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         pointer-events: none;
+//         z-index: 1;
+//     `;
 
-    hero.appendChild(particlesContainer);
+//     hero.appendChild(particlesContainer);
 
-    // 30개의 파티클 생성
-    for (let i = 0; i < 30; i++) {
-        createParticle(particlesContainer);
-    }
-}
+//     // 30개의 파티클 생성
+//     for (let i = 0; i < 30; i++) {
+//         createParticle(particlesContainer);
+//     }
+// }
 
 function createParticle(container) {
     const particle = document.createElement("div");
@@ -343,4 +328,18 @@ document.querySelectorAll(".faq-item").forEach((item) => {
             item.classList.add("active");
         }
     });
+});
+// 로딩 화면 제거
+window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading-screen");
+
+    // 최소 2초 동안 로딩 화면 표시
+    setTimeout(() => {
+        loadingScreen.classList.add("fade-out");
+
+        // 페이드아웃 완료 후 요소 제거
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+        }, 800);
+    }, 2000);
 });

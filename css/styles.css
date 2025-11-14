@@ -660,7 +660,6 @@ section {
 }
 
 .about-text p {
-    color: var(--text-light);
     margin-bottom: 1rem;
     line-height: 1.8;
 }
@@ -1434,7 +1433,6 @@ section {
 }
 
 .info-item p {
-    color: var(--text-light);
     line-height: 1.6;
 }
 
