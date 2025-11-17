@@ -1614,6 +1614,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    .logo-image {
+        height: 30px;
+        margin-top: 10px;
+    }
     .hero {
         height: 730px;
     }
